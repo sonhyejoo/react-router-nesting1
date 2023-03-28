@@ -1,15 +1,8 @@
-import {
-  Route,
-  Switch,
-  useRouteMatch,
-  useParams,
-  NavLink,
-} from "react-router-dom";
+import { Route, Switch, useRouteMatch, NavLink } from "react-router-dom";
 import MovieDetails from "../MovieDetails";
 function Movies({ movies }) {
   const match = useRouteMatch();
   const url = match.url;
-  const { movieId } = useParams();
   return (
     <div className="comp orange">
       <h1>Movies Component</h1>
@@ -25,7 +18,7 @@ function Movies({ movies }) {
         </ul>
       </nav>
       <Switch>
-        <Route to={`${url}/${movieId}`}>
+        <Route path={`${url}/:movieId`}>
           <MovieDetails movies={movies} />
         </Route>
       </Switch>
