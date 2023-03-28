@@ -1,6 +1,8 @@
-function MovieDetails() {
+import { useParams } from "react-router-dom";
+
+function MovieDetails({ movies }) {
   return (
-    <div className='comp purple'>
+    <div className="comp purple">
       <h1>MovieDetails Component</h1>
     </div>
   );
